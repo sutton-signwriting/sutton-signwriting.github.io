@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="a package of information and resources about the Sutton SignWriting script">
+        <meta name="author" content="Steve Slevinski">
+        <link rel="canonical" href="https://sutton-signwriting.io/">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Sutton SignWriting</title>
+        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="css/extra.css" rel="stylesheet">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=".">Sutton SignWriting</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/sutton-signwriting/sutton-signwriting/"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#sutton-signwriting">Sutton SignWriting</a></li>
+            <li><a href="#specification">Specification</a></li>
+            <li><a href="#characters">Characters</a></li>
+            <li><a href="#fonts">Fonts</a></li>
+            <li><a href="#production">Production</a></li>
+            <li><a href="#prototype">Prototype</a></li>
+            <li><a href="#development">Development</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="sutton-signwriting">Sutton SignWriting<a class="headerlink" href="#sutton-signwriting" title="Permanent link"></a></h1>
+<p><img alt="Sutton-SignWriting.io" src="img/sutton-signwriting.io.png" /></p>
+<p>The Sutton SignWriting script is the universal and complete solution for written
+sign language, ISO 15924 script code "Sgnw".  It has been applied by
+a wide and deep international community of sign language users.
+Sutton SignWriting is an international standard for writing sign
+languages by hand or with computers.  From education to research,
+from entertainment to religion, SignWriting has proven useful because
+people are using it to write signed languages.</p>
+<p>Formal SignWriting is one particular computerized design for Sutton
+SignWriting that envisions a sign as a two part word.  Each word is
+written as a string of characters that can be recognized and
+processed by regular expressions.  The design has been optimized for
+display, searching, sorting, text flow, and other character
+processing.</p>
+<hr />
+<h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link"></a></h2>
+<p>The Formal SignWriting specification is a faithful encoding of Sutton SignWriting that is documented in an Internet Draft submitted to the IETF.</p>
+<div>
+<a href="https://www.ietf.org/archive/id/draft-slevinski-formal-signwriting-08.txt" class="btn btn-primary" role="button">Text</a>
+<a href="https://www.ietf.org/archive/id/draft-slevinski-formal-signwriting-08.html" class="btn btn-primary" role="button">HTML</a>
+<a href="https://www.ietf.org/archive/id/draft-slevinski-formal-signwriting-08.xml" class="btn btn-primary" role="button">XML</a>
+<a href="https://tools.ietf.org/pdf/draft-slevinski-formal-signwriting-08.pdf" class="btn btn-primary" role="button">PDF</a>
+<a href="https://datatracker.ietf.org/doc/html/draft-slevinski-formal-signwriting-08" class="btn btn-primary" role="button">HTMLized</a>
+<a href="https://datatracker.ietf.org/doc/draft-slevinski-formal-signwriting/08/bibtex" class="btn btn-primary" role="button">Bibtex</a>
+</div>
+
+<hr />
+<h2 id="characters">Characters<a class="headerlink" href="#characters" title="Permanent link"></a></h2>
+<p>Any sign can be written as a string of characters.  Formal
+SignWriting has two sets of characters that can be used: Formal
+SignWriting in ASCII (FSW) and SignWriting in Unicode (SWU).  These
+sets are isomorphic with an easy bi-directional conversion between
+the two sets.</p>
+<pre><code>+=================+==================+====================+
+| Description     | FSW Characters   | SWU Characters     |
++=================+==================+====================+
+| Sequence Marker | A                | U+1D800            |
++-----------------+------------------+--------------------+
+| Signbox Markers | B, L, M, R       | U+1D801 to U+1D804 |
++-----------------+------------------+--------------------+
+| Numbers         | 250 to 749       | U+1D80C to U+1D9FF |
++-----------------+------------------+--------------------+
+| Symbols         | S10000 to S38b07 | U+40001 to U+4F428 |
++-----------------+------------------+--------------------+
+</code></pre>
+<div>
+<a href="https://slevinski.github.io/SuttonSignWriting/characters/index.html" class="btn btn-primary" role="button">Character Sets</a>
+<a href="https://steveslevinski.me/demo/fsw.html" class="btn btn-primary" role="button">FSW Demo</a>
+<a href="https://slevinski.github.io/SuttonSignWriting/characters/symbols.html#?ui=en&set=fsw" class="btn btn-primary" role="button">FSW Symbols</a>
+<a href="https://steveslevinski.me/demo/swu.html" class="btn btn-primary" role="button">SWU Demo</a>
+<a href="https://slevinski.github.io/SuttonSignWriting/characters/symbols.html#?ui=en&set=swu" class="btn btn-primary" role="button">SWU Symbols</a>
+</div>
+
+<hr />
+<h2 id="fonts">Fonts<a class="headerlink" href="#fonts" title="Permanent link"></a></h2>
+<p>The TrueType Fonts can be used without installing the fonts on any
+platform with font-face statements.  Simply include the
+following CSS in any HTML page to access the fonts.</p>
+<pre><code>@font-face {
+  font-family: "SuttonSignWritingLine";
+  src:
+    local('SuttonSignWritingLine'),
+    url('https://unpkg.com/@sutton-signwriting/font-ttf@1.0.0/font/SuttonSignWritingLine.ttf') format('truetype');
+}
+@font-face {
+  font-family: "SuttonSignWritingFill";
+  src:
+    local('SuttonSignWritingFill'),
+    url('https://unpkg.com/@sutton-signwriting/font-ttf@1.0.0/font/SuttonSignWritingFill.ttf') format('truetype');
+}
+@font-face {
+  font-family: "SuttonSignWritingOneD";
+  src:
+    local('SuttonSignWritingOneD'),
+    url('https://unpkg.com/@sutton-signwriting/font-ttf@1.0.0/font/SuttonSignWritingOneD.ttf') format('truetype');
+}
+</code></pre>
+<p>If the fonts are installed, then the system fonts will be used.  If
+the fonts are not installed when a SignWriting Font page is opened,
+the CSS will cause the fonts to be automatically downloaded to the
+browser's cache on the first visit.  Once the fonts are installed in
+the browser cache, they will remain there until the browser cache is
+emptied.  Any webside that uses this CSS can access the browser
+installed font without requesting a new copy.  The fonts are 18 MB,
+so the first page view make take a few seconds or longer depending on
+your download speed and processor.</p>
+<div>
+<a href="https://slevinski.github.io/SuttonSignWriting/components/fonts.html" class="btn btn-primary" role="button">Reference</a>
+<a href="https://github.com/Slevinski/signwriting_2010_tools" class="btn btn-primary" role="button">Development</a>
+<a href="https://github.com/Slevinski/signwriting_2010_fonts" class="btn btn-primary" role="button">Source</a>
+<a href="https://unpkg.com/browse/@sutton-signwriting/font-ttf@1.2.0/font/" class="btn btn-primary" role="button">Distribution</a>
+</div>
+
+<hr />
+<h2 id="production">Production<a class="headerlink" href="#production" title="Permanent link"></a></h2>
+<p>Sutton SignWriting has several production ready packages available on GitHub, NPM, and Unpkg.</p>
+<h3 id="sutton-signwritingcore"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/core" title="GitHub Repository: @sutton-signwriting/core">@sutton-signwriting/core</a><a class="headerlink" href="#sutton-signwritingcore" title="Permanent link"></a></h3>
+<p>a javascript package for node and browsers that supports general processing of SignWriting text</p>
+<div>
+<a href="https://sutton-signwriting.github.io/core/" class="btn btn-primary" role="button">Docs</a>
+<a href="https://github.com/sutton-signwriting/core" class="btn btn-primary" role="button">Source</a>
+<a href="https://www.npmjs.com/package/@sutton-signwriting/core" class="btn btn-primary" role="button">Package</a>
+<a href="https://unpkg.com/browse/@sutton-signwriting/core/" class="btn btn-primary" role="button">Distribution</a>
+</div>
+
+<hr />
+<h3 id="sutton-signwritingfont-db"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/font-db" title="GitHub Repository: @sutton-signwriting/font-db">@sutton-signwriting/font-db</a><a class="headerlink" href="#sutton-signwritingfont-db" title="Permanent link"></a></h3>
+<p>a javascript package for node that generates SVG and PNG images for individual symbols and complete signs</p>
+<div>
+<a href="https://sutton-signwriting.github.io/font-db/" class="btn btn-primary" role="button">Docs</a>
+<a href="https://github.com/sutton-signwriting/font-db" class="btn btn-primary" role="button">Source</a>
+<a href="https://www.npmjs.com/package/@sutton-signwriting/font-db" class="btn btn-primary" role="button">Package</a>
+<a href="https://unpkg.com/browse/@sutton-signwriting/font-db/" class="btn btn-primary" role="button">Distribution</a>
+</div>
+
+<hr />
+<h3 id="sutton-signwritingfont-ttf"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/font-ttf" title="GitHub Repository: @sutton-signwriting/font-ttf">@sutton-signwriting/font-ttf</a><a class="headerlink" href="#sutton-signwritingfont-ttf" title="Permanent link"></a></h3>
+<p>a javascript package for the browser that generates SVG and PNG images for individual symbols and complete signs using TrueType Fonts</p>
+<div>
+<a href="https://sutton-signwriting.github.io/font-ttf/" class="btn btn-primary" role="button">Docs</a>
+<a href="https://github.com/sutton-signwriting/font-ttf" class="btn btn-primary" role="button">Source</a>
+<a href="https://www.npmjs.com/package/@sutton-signwriting/font-ttf" class="btn btn-primary" role="button">Package</a>
+<a href="https://unpkg.com/browse/@sutton-signwriting/font-ttf/" class="btn btn-primary" role="button">Distribution</a>
+</div>
+
+<hr />
+<h3 id="sutton-signwritingsgnw-components"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/sgnw-components" title="GitHub Repository: @sutton-signwriting/sgnw-components">@sutton-signwriting/sgnw-components</a><a class="headerlink" href="#sutton-signwritingsgnw-components" title="Permanent link"></a></h3>
+<p>a javascript package for the browser that includes a collection of web components built with https://stenciljs.com/</p>
+<div>
+<a href="https://sutton-signwriting.github.io/sgnw-components/" class="btn btn-primary" role="button">Docs</a>
+<a href="https://github.com/sutton-signwriting/sgnw-components" class="btn btn-primary" role="button">Source</a>
+<a href="https://www.npmjs.com/package/@sutton-signwriting/sgnw-components" class="btn btn-primary" role="button">Package</a>
+<a href="https://unpkg.com/browse/@sutton-signwriting/sgnw-components/" class="btn btn-primary" role="button">Distribution</a>
+
+</div>
+
+<hr />
+<h2 id="prototype">Prototype<a class="headerlink" href="#prototype" title="Permanent link"></a></h2>
+<p>Sutton SignWriting has one prototype that is ready to use.</p>
+<h3 id="sutton-signwritingsignmaker"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/signmaker" title="GitHub Repository: @sutton-signwriting/signmaker">@sutton-signwriting/signmaker</a><a class="headerlink" href="#sutton-signwritingsignmaker" title="Permanent link"></a></h3>
+<p>an online editor that can be accessed directly, embedded in an iFrame, and downloaded</p>
+<div>
+<a href="https://sutton-signwriting.github.io/signmaker/" class="btn btn-primary" role="button">Direct</a>
+<a href="https://sutton-signwriting.github.io/signmaker/demo.html" class="btn btn-primary" role="button">iFrame</a>
+<a href="https://github.com/sutton-signwriting/signmaker/archive/refs/heads/main.zip" class="btn btn-primary" role="button">Download</a>
+<a href="https://github.com/sutton-signwriting/signmaker" class="btn btn-primary" role="button">Source</a>
+<a href="https://www.npmjs.com/package/@sutton-signwriting/signmaker" class="btn btn-primary" role="button">Package</a>
+<a href="https://unpkg.com/browse/@sutton-signwriting/signmaker/" class="btn btn-primary" role="button">Distribution</a>
+
+</div>
+
+<hr />
+<h2 id="development">Development<a class="headerlink" href="#development" title="Permanent link"></a></h2>
+<p>Sutton SignWriting has three projects under active development.</p>
+<h3 id="sutton-signwritingcloud-maker"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/cloud-maker" title="GitHub Repository: @sutton-signwriting/cloud-maker">@sutton-signwriting/cloud-maker</a><a class="headerlink" href="#sutton-signwritingcloud-maker" title="Permanent link"></a></h3>
+<p>a collection of scripts and data used together to make a functional Sutton SignWriting Cloud server</p>
+<div>
+<a href="https://github.com/sutton-signwriting/cloud-maker" class="btn btn-primary" role="button">Source</a>
+</div>
+
+<hr />
+<h3 id="sutton-signwritinghello-world"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/hello-world" title="GitHub Repository: @sutton-signwriting/hello-world">@sutton-signwriting/hello-world</a><a class="headerlink" href="#sutton-signwritinghello-world" title="Permanent link"></a></h3>
+<p>a client-side application with optional connection to a cloud server
+<img alt="hello-world" src="img/hello-world.png" /></p>
+<div>
+<a href="https://github.com/sutton-signwriting/hello-world" class="btn btn-primary" role="button">Source</a>
+<a href="https://signpuddle.com/client/" class="btn btn-primary" role="button">Prototype</a>
+</div>
+
+<hr />
+<h3 id="sutton-signwritingportable"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/portable" title="GitHub Repository: @sutton-signwriting/portable">@sutton-signwriting/portable</a><a class="headerlink" href="#sutton-signwritingportable" title="Permanent link"></a></h3>
+<p>utilities to create filesystems, static websites, USB drives, client side applications, and cloud server installations
+<img alt="portable" src="img/portable.png" /></p>
+<div>
+<a href="https://github.com/sutton-signwriting/portable" class="btn btn-primary" role="button">Source</a>
+</div>
+
+<hr /></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2022 <a href="https://steveslevinski.me">Steve Slevinski</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2021-12-31 03:55:15
+-->
