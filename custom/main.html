@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+        <title>{% if page and page.title and not page.is_homepage %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+<!--        
+        <script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components@0.10.0/dist/sgnw-components/sgnw-components.esm.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://unpkg.com/@sutton-signwriting/sgnw-components@0.10.0/dist/sgnw-components/sgnw-components.css"/>
+-->
+        <style>html {scroll-behavior: smooth;}</style>
+{% endblock %}

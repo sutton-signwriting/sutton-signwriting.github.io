@@ -4,11 +4,17 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="a package of information and resources about the Sutton SignWriting script">
+        <meta name="description" content="a website of information and resources about the Sutton SignWriting script">
         <meta name="author" content="Steve Slevinski">
         <link rel="canonical" href="https://www.sutton-signwriting.io/">
         <link rel="shortcut icon" href="img/favicon.ico">
         <title>Sutton SignWriting</title>
+<!--        
+        <script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components@0.10.0/dist/sgnw-components/sgnw-components.esm.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://unpkg.com/@sutton-signwriting/sgnw-components@0.10.0/dist/sgnw-components/sgnw-components.css"/>
+-->
+        <style>html {scroll-behavior: smooth;}</style>
+
         <link href="css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -41,6 +47,18 @@
 
                 <!-- Expanded navigation -->
                 <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href=".">Home</a>
+                            </li>
+                            <li >
+                                <a href="subdomains/">Subdomains</a>
+                            </li>
+                            <li >
+                                <a href="sponsors/">Sponsors</a>
+                            </li>
+                        </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -48,6 +66,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="disabled">
+                                <a rel="next" >
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="subdomains/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                             <li>
                                 <a href="https://github.com/sutton-signwriting/"><i class="fa fa-github"></i> GitHub</a>
                             </li>
@@ -65,28 +93,14 @@
             <li><a href="#fonts">Fonts</a></li>
             <li><a href="#production">Production</a></li>
             <li><a href="#signmaker-2022">SignMaker 2022</a></li>
-            <li><a href="#development">Development</a></li>
             <li><a href="#machine-learning">Machine Learning</a></li>
+            <li><a href="#development">Development</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="sutton-signwriting">Sutton SignWriting<a class="headerlink" href="#sutton-signwriting" title="Permanent link"></a></h1>
-<p><img alt="Sutton-SignWriting.io" src="img/sutton-signwriting.io.png" /></p>
-<p>The Sutton SignWriting script is the universal and complete solution for written
-sign language, ISO 15924 script code "Sgnw".  It has been applied by
-a wide and deep international community of sign language users.
-Sutton SignWriting is an international standard for writing sign
-languages by hand or with computers.  From education to research,
-from entertainment to religion, SignWriting has proven useful because
-people are using it to write signed languages.</p>
-<p>Formal SignWriting is one particular computerized design for Sutton
-SignWriting that envisions a sign as a two part word.  Each word is
-written as a string of characters that can be recognized and
-processed by regular expressions.  The design has been optimized for
-display, searching, sorting, text flow, and other character
-processing.</p>
-<div>
+<p><div>
 <a href="https://signwriting.org/" class="btn btn-primary" role="button">SignWriting.org</a>
 <a href="https://www.youtube.com/channel/UCXu4AXlG0rXFtk_5SzumDow" class="btn btn-primary" role="button">SignWriting Stream</a>
 <a href="https://gitter.im/sutton-signwriting/community" class="btn btn-primary" role="button">Gitter Chat</a>
@@ -94,7 +108,26 @@ processing.</p>
 <a href="https://www.facebook.com/groups/SuttonSignWriting/" class="btn btn-primary" role="button">Facebook Group</a>
 <a href="https://en.wikipedia.org/wiki/SignWriting" class="btn btn-primary" role="button">Wikipedia</a>
 </div>
-
+<img alt="Sutton-SignWriting.io" src="img/sutton-signwriting.io.png" /></p>
+<p>The Sutton SignWriting script is the universal and complete solution for written
+sign language, ISO 15924 script code "Sgnw".  It has been applied by
+a wide and deep international community of sign language users.
+Sutton SignWriting is an international standard for writing sign
+languages by hand or with computers.  From education to research,
+from entertainment to religion, SignWriting has proven useful because
+people are using it to write signed languages.</p>
+<p>Formal SignWriting is one particular computerized design for Sutton SignWriting.
+Formal SignWriting envisions a sign as a two-part word of time and space.
+Each word is written as a string of characters that can be recognized and
+processed by regular expressions. The design has been optimized for
+display, searching, sorting, text flow, and other character processing.</p>
+<p>www.Sutton-SignWriting.io is a website of information and resources about the Sutton SignWriting script and Formal SignWriting technology.
+<div>
+<a href="https://github.com/sutton-signwriting/sutton-signwriting" class="btn btn-primary" role="button">Source</a>
+<a href="https://www.npmjs.com/package/@sutton-signwriting/sutton-signwriting" class="btn btn-primary" role="button">Package</a>
+<a href="https://unpkg.com/browse/@sutton-signwriting/sutton-signwriting/" class="btn btn-primary" role="button">Distribution</a>
+<a href="https://github.com/sutton-signwriting/sutton-signwriting/archive/refs/heads/main.zip" class="btn btn-primary" role="button">Download</a>
+</div></p>
 <hr />
 <h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link"></a></h2>
 <p>The Formal SignWriting specification is a faithful encoding of Sutton SignWriting that is documented in an Internet Draft submitted to the IETF.</p>
@@ -114,18 +147,37 @@ SignWriting has two sets of characters that can be used: Formal
 SignWriting in ASCII (FSW) and SignWriting in Unicode (SWU).  These
 sets are isomorphic with an easy bi-directional conversion between
 the two sets.</p>
-<pre><code>+=================+==================+====================+
-| Description     | FSW Characters   | SWU Characters     |
-+=================+==================+====================+
-| Sequence Marker | A                | U+1D800            |
-+-----------------+------------------+--------------------+
-| Signbox Markers | B, L, M, R       | U+1D801 to U+1D804 |
-+-----------------+------------------+--------------------+
-| Numbers         | 250 to 749       | U+1D80C to U+1D9FF |
-+-----------------+------------------+--------------------+
-| Symbols         | S10000 to S38b07 | U+40001 to U+4F428 |
-+-----------------+------------------+--------------------+
-</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">FSW Characters</th>
+<th align="left">SWU Characters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Sequence Marker</td>
+<td align="left">A</td>
+<td align="left">U+1D800</td>
+</tr>
+<tr>
+<td align="left">Signbox Markers</td>
+<td align="left">B, L, M, R</td>
+<td align="left">U+1D801 to U+1D804</td>
+</tr>
+<tr>
+<td align="left">Numbers</td>
+<td align="left">250 to 749</td>
+<td align="left">U+1D80C to U+1D9FF</td>
+</tr>
+<tr>
+<td align="left">Symbols</td>
+<td align="left">S10000 to S38b07</td>
+<td align="left">U+40001 to U+4F428</td>
+</tr>
+</tbody>
+</table>
 <div>
 <a href="https://www.ietf.org/archive/id/draft-slevinski-formal-signwriting-08.html#name-characters" class="btn btn-primary" role="button">Character Sets</a>
 <a href="https://steveslevinski.me/demo/fsw.html" class="btn btn-primary" role="button">FSW Demo</a>
@@ -233,32 +285,6 @@ your download speed and processor.</p>
 </div>
 
 <hr />
-<h2 id="development">Development<a class="headerlink" href="#development" title="Permanent link"></a></h2>
-<p>Sutton SignWriting has three coding projects under development.</p>
-<h3 id="sutton-signwritingcloud-maker"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/cloud-maker" title="GitHub Repository: @sutton-signwriting/cloud-maker">@sutton-signwriting/cloud-maker</a><a class="headerlink" href="#sutton-signwritingcloud-maker" title="Permanent link"></a></h3>
-<p>a collection of scripts and data used together to make a functional Sutton SignWriting Cloud server</p>
-<div>
-<a href="https://github.com/sutton-signwriting/cloud-maker" class="btn btn-primary" role="button">Source</a>
-</div>
-
-<hr />
-<h3 id="sutton-signwritinghello-world"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/hello-world" title="GitHub Repository: @sutton-signwriting/hello-world">@sutton-signwriting/hello-world</a><a class="headerlink" href="#sutton-signwritinghello-world" title="Permanent link"></a></h3>
-<p>a client-side application with optional connection to a cloud server
-<img alt="hello-world" src="img/hello-world.png" /></p>
-<div>
-<a href="https://github.com/sutton-signwriting/hello-world" class="btn btn-primary" role="button">Source</a>
-<a href="https://signpuddle.com/client/" class="btn btn-primary" role="button">Prototype</a>
-</div>
-
-<hr />
-<h3 id="sutton-signwritingportable"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/portable" title="GitHub Repository: @sutton-signwriting/portable">@sutton-signwriting/portable</a><a class="headerlink" href="#sutton-signwritingportable" title="Permanent link"></a></h3>
-<p>utilities to create filesystems, static websites, USB drives, client side applications, and cloud server installations
-<img alt="portable" src="img/portable.png" /></p>
-<div>
-<a href="https://github.com/sutton-signwriting/portable" class="btn btn-primary" role="button">Source</a>
-</div>
-
-<hr />
 <h2 id="machine-learning">Machine Learning<a class="headerlink" href="#machine-learning" title="Permanent link"></a></h2>
 <p>Sutton SignWriting is growing in the machine learning communities.</p>
 <ul>
@@ -311,12 +337,36 @@ your download speed and processor.</p>
 <a href="https://github.com/J22Melody/signwriting-translation" class="btn btn-primary" role="button">Source</a>
 </div>
 
-<hr /></div>
+<hr />
+<h2 id="development">Development<a class="headerlink" href="#development" title="Permanent link"></a></h2>
+<p>Sutton SignWriting has three coding projects under development.</p>
+<h3 id="sutton-signwritingcloud-maker"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/cloud-maker" title="GitHub Repository: @sutton-signwriting/cloud-maker">@sutton-signwriting/cloud-maker</a><a class="headerlink" href="#sutton-signwritingcloud-maker" title="Permanent link"></a></h3>
+<p>a collection of scripts and data used together to make a functional Sutton SignWriting Cloud server</p>
+<div>
+<a href="https://github.com/sutton-signwriting/cloud-maker" class="btn btn-primary" role="button">Source</a>
+</div>
+
+<hr />
+<h3 id="sutton-signwritinghello-world"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/hello-world" title="GitHub Repository: @sutton-signwriting/hello-world">@sutton-signwriting/hello-world</a><a class="headerlink" href="#sutton-signwritinghello-world" title="Permanent link"></a></h3>
+<p>a client-side application with optional connection to a cloud server
+<img alt="hello-world" src="img/hello-world.png" /></p>
+<div>
+<a href="https://github.com/sutton-signwriting/hello-world" class="btn btn-primary" role="button">Source</a>
+<a href="https://signpuddle.com/client/" class="btn btn-primary" role="button">Prototype</a>
+</div>
+
+<hr />
+<h3 id="sutton-signwritingportable"><a class="gh-link gh-mention" href="https://github.com/sutton-signwriting/portable" title="GitHub Repository: @sutton-signwriting/portable">@sutton-signwriting/portable</a><a class="headerlink" href="#sutton-signwritingportable" title="Permanent link"></a></h3>
+<p>utilities to create filesystems, static websites, USB drives, client side applications, and cloud server installations
+<img alt="portable" src="img/portable.png" /></p>
+<div>
+<a href="https://github.com/sutton-signwriting/portable" class="btn btn-primary" role="button">Source</a>
+</div></div>
         </div>
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2022 <a href="https://steveslevinski.me">Steve Slevinski</a>.</p>
+                <p>Copyright &copy; 2022 <a href="https://steveslevinski.me">Steve Slevinski</a>.<br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
@@ -395,5 +445,5 @@ your download speed and processor.</p>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2022-01-01 15:44:38
+Build Date UTC : 2022-01-31 14:43:07
 -->
