@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A public, machine-neutral guide to using Codex for careful project work, verification, and deliberate publication.">
+    <link rel="canonical" href="https://www.sutton-signwriting.io/back-office/">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sutton SignWriting Back Office Guide</title>
+  </head>
+  <body class="back">
+    <header class="site-header">
+      <a class="brand" href="../">Sutton SignWriting</a>
+      <nav aria-label="Guide navigation">
+        <a href="../front-office/">Front Office guide</a>
+        <a href="https://learn.chatgpt.com/docs/codex/cli">Official Codex documentation</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Public guide · Back Office</p>
+          <h1>From a clear outcome to a verified change.</h1>
+          <p class="lede">The Sutton SignWriting Back Office uses a project-rooted Codex workflow: establish context, make bounded changes, verify the result, and cross the publication boundary deliberately.</p>
+          <div class="actions">
+            <a class="button primary" href="#workflow">Follow the working loop</a>
+            <a class="button secondary" href="https://learn.chatgpt.com/docs/codex/cli">OpenAI Codex CLI guide</a>
+          </div>
+        </div>
+        <aside class="principle">
+          <span>Acceptance rule</span>
+          <strong>A change is not complete because an agent says it is. Inspect the evidence.</strong>
+        </aside>
+      </section>
+
+      <section class="section" id="purpose">
+        <div class="section-heading">
+          <p class="eyebrow">Purpose</p>
+          <h2>Keep the work close to the project that owns it.</h2>
+        </div>
+        <div class="two-column">
+          <p>Start in the narrowest project directory that owns the outcome. This gives Codex the right source files, version-control history, project instructions, and verification commands without pulling unrelated work into the conversation.</p>
+          <p>Use one clear outcome per conversation. A short investigation can stay with its parent task, while unrelated goals deserve separate sessions and separate review.</p>
+        </div>
+      </section>
+
+      <section class="section tinted" id="workflow">
+        <div class="section-heading">
+          <p class="eyebrow">Working loop</p>
+          <h2>Move through six evidence-producing steps.</h2>
+        </div>
+        <div class="steps">
+          <article><span>01</span><h3>Enter</h3><p>Open the project that owns the outcome and inspect its instructions.</p></article>
+          <article><span>02</span><h3>State</h3><p>Describe the desired result, constraints, and important acceptance checks.</p></article>
+          <article><span>03</span><h3>Inspect</h3><p>Read the relevant code, documentation, history, and current working state.</p></article>
+          <article><span>04</span><h3>Change</h3><p>Make the smallest coherent edit that fully addresses the outcome.</p></article>
+          <article><span>05</span><h3>Verify</h3><p>Run proportionate checks and inspect browser-visible or runtime behavior.</p></article>
+          <article><span>06</span><h3>Review</h3><p>Examine the diff, preserve unrelated work, and record a clear handoff.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="knowledge">
+        <div class="section-heading">
+          <p class="eyebrow">Durable context</p>
+          <h2>Put lasting knowledge in files, not in remembered chat history.</h2>
+        </div>
+        <div class="cards">
+          <article><h3>README</h3><p>Explain the project's identity, purpose, layout, operation, and recovery.</p></article>
+          <article><h3>AGENTS.md</h3><p>Store durable instructions that should guide future work in that directory.</p></article>
+          <article><h3>Decisions</h3><p>Record consequential choices and their reasoning when the project benefits.</p></article>
+          <article><h3>Tasks</h3><p>Track unfinished multi-session work only when a simple issue or conversation is not enough.</p></article>
+        </div>
+      </section>
+
+      <section class="section boundary" id="safety">
+        <div class="section-heading">
+          <p class="eyebrow">Safety and review</p>
+          <h2>Permission, scope, and verification are different questions.</h2>
+        </div>
+        <div class="boundary-grid">
+          <article>
+            <h3>Before changing</h3>
+            <ul>
+              <li>Confirm that the request authorizes the intended mutation</li>
+              <li>Protect credentials, personal records, and unpublished material</li>
+              <li>Check for unrelated or concurrent work before editing</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Before declaring success</h3>
+            <ul>
+              <li>Run syntax, build, test, health, and behavior checks appropriate to the risk</li>
+              <li>Review the resulting diff and repository status</li>
+              <li>Separate verified facts from inferences and remaining uncertainty</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section tinted" id="parallel-work">
+        <div class="section-heading">
+          <p class="eyebrow">Multiple sessions</p>
+          <h2>Parallel work needs isolation.</h2>
+        </div>
+        <div class="two-column">
+          <p>Several read-only conversations can safely inspect the same project. Concurrent writers should use separate branches or Git worktrees so their changes, tests, and commits remain reviewable.</p>
+          <p>Delegate only bounded work that can proceed independently. The main conversation remains responsible for integration, verification, and the final result.</p>
+        </div>
+      </section>
+
+      <section class="callout">
+        <div>
+          <p class="eyebrow">Publication boundary</p>
+          <h2>Private development becomes public only through an explicit, reviewed release.</h2>
+        </div>
+        <a class="button primary" href="../front-office/">See the Front Office guide</a>
+      </section>
+
+      <section class="section" id="official-docs">
+        <div class="section-heading">
+          <p class="eyebrow">Official sources</p>
+          <h2>Use current OpenAI documentation for Codex behavior and configuration.</h2>
+        </div>
+        <div class="cards">
+          <article><h3>Codex CLI</h3><p><a href="https://learn.chatgpt.com/docs/codex/cli">Inspect, edit, run, and automate work from the terminal.</a></p></article>
+          <article><h3>AGENTS.md</h3><p><a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md">Configure durable instructions for a repository or directory.</a></p></article>
+          <article><h3>Git worktrees</h3><p><a href="https://learn.chatgpt.com/docs/environments/git-worktrees">Isolate parallel changes in separate working directories.</a></p></article>
+          <article><h3>Codex documentation</h3><p><a href="https://learn.chatgpt.com/docs/codex">Review current features, configuration, security, and development workflows.</a></p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>Sutton SignWriting Back Office Guide</strong><br>An independent project guide, not official OpenAI documentation.</p>
+      <p>Reviewed September 5, 2026 · <a href="../">Sutton SignWriting</a></p>
+    </footer>
+  </body>
+</html>
