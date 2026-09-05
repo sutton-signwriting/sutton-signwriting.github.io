@@ -2,155 +2,68 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A public, machine-neutral guide to using Codex for careful project work, verification, and deliberate publication.">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="A public, machine-neutral guide to careful project work, implementation, verification, and deliberate handoff.">
     <link rel="canonical" href="https://www.sutton-signwriting.io/back-office/">
     <link rel="stylesheet" href="styles.css">
     <title>Sutton SignWriting Back Office Guide</title>
   </head>
   <body class="back">
-    <header class="site-header">
-      <a class="brand" href="../">Sutton SignWriting</a>
-      <nav aria-label="Guide navigation">
-        <a href="../front-office/">Front Office guide</a>
-        <a href="https://learn.chatgpt.com/docs/codex/cli">Official Codex documentation</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div>
-          <p class="eyebrow">Public guide · Back Office</p>
-          <h1>From a clear outcome to a verified change.</h1>
-          <p class="lede">The Sutton SignWriting Back Office uses a project-rooted Codex workflow: establish context, make bounded changes, verify the result, and cross the publication boundary deliberately.</p>
-          <div class="actions">
-            <a class="button primary" href="#workflow">Follow the working loop</a>
-            <a class="button secondary" href="https://learn.chatgpt.com/docs/codex/cli">OpenAI Codex CLI guide</a>
-          </div>
-        </div>
-        <aside class="principle">
-          <span>Acceptance rule</span>
-          <strong>A change is not complete because an agent says it is. Inspect the evidence.</strong>
-        </aside>
-      </section>
-
-      <section class="section" id="purpose">
-        <div class="section-heading">
-          <p class="eyebrow">Purpose</p>
-          <h2>Keep the work close to the project that owns it.</h2>
-        </div>
-        <div class="two-column">
-          <p>Start in the narrowest project directory that owns the outcome. This gives Codex the right source files, version-control history, project instructions, and verification commands without pulling unrelated work into the conversation.</p>
-          <p><strong>Steve is the hinge: Front prepares; Back implements; nothing is approved until he says so.</strong> Use one clear outcome per conversation; unrelated goals deserve separate sessions and separate review.</p>
-        </div>
-      </section>
-
-      <section class="section tinted" id="workflow">
-        <div class="section-heading">
-          <p class="eyebrow">Working loop</p>
-          <h2>Move through six evidence-producing steps.</h2>
-        </div>
-        <div class="steps">
-          <article><span>01</span><h3>Enter</h3><p>Open the project that owns the outcome and inspect its instructions.</p></article>
-          <article><span>02</span><h3>State</h3><p>Describe the desired result, constraints, and important acceptance checks.</p></article>
-          <article><span>03</span><h3>Inspect</h3><p>Read the relevant code, documentation, history, and current working state.</p></article>
-          <article><span>04</span><h3>Change</h3><p>Make the smallest coherent edit that fully addresses the outcome.</p></article>
-          <article><span>05</span><h3>Verify</h3><p>Run proportionate checks and inspect browser-visible or runtime behavior.</p></article>
-          <article><span>06</span><h3>Review</h3><p>Examine the diff, preserve unrelated work, and record a clear handoff.</p></article>
-        </div>
-      </section>
-
-      <section class="section tinted" id="handoff">
-        <div class="section-heading">
-          <p class="eyebrow">Office handoff</p>
-          <h2>What crosses the boundary</h2>
-        </div>
-        <div class="boundary-grid">
-          <article>
-            <h3>Packet in</h3>
-            <p>The ask, constraints, Stewardship vetoes, and acceptance conditions arrive as one specifically authorized packet.</p>
-          </article>
-          <article>
-            <h3>Verified result out</h3>
-            <p>Implementation returns evidence of the result or a bounded handoff with remaining gaps. Steve authorizes each crossing.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="knowledge">
-        <div class="section-heading">
-          <p class="eyebrow">Durable context</p>
-          <h2>Put lasting knowledge in files, not in remembered chat history.</h2>
-        </div>
-        <div class="cards">
-          <article><h3>README</h3><p>Explain the project's identity, purpose, layout, operation, and recovery.</p></article>
-          <article><h3>AGENTS.md</h3><p>Store durable instructions that should guide future work in that directory.</p></article>
-          <article><h3>Decisions</h3><p>Record consequential choices and their reasoning when the project benefits.</p></article>
-          <article><h3>Tasks</h3><p>Track unfinished multi-session work only when a simple issue or conversation is not enough.</p></article>
-        </div>
-      </section>
-
-      <section class="section boundary" id="safety">
-        <div class="section-heading">
-          <p class="eyebrow">Safety and review</p>
-          <h2>Permission, scope, and verification are different questions.</h2>
-        </div>
-        <div class="boundary-grid">
-          <article>
-            <h3>Before changing</h3>
-            <ul>
-              <li>Confirm that the request authorizes the intended mutation</li>
-              <li>Protect credentials, personal records, and unpublished material</li>
-              <li>Check for unrelated or concurrent work before editing</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Before declaring success</h3>
-            <ul>
-              <li>Run syntax, build, test, health, and behavior checks appropriate to the risk</li>
-              <li>Review the resulting diff and repository status</li>
-              <li>Separate verified facts from inferences and remaining uncertainty</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section tinted" id="parallel-work">
-        <div class="section-heading">
-          <p class="eyebrow">Multiple sessions</p>
-          <h2>Parallel work needs isolation.</h2>
-        </div>
-        <div class="two-column">
-          <p>Several read-only conversations can safely inspect the same project. Concurrent writers should use separate branches or Git worktrees so their changes, tests, and commits remain reviewable.</p>
-          <p>Delegate only bounded work that can proceed independently. The main conversation remains responsible for integration, verification, and the final result.</p>
-        </div>
-      </section>
-
-      <section class="callout">
-        <div>
-          <p class="eyebrow">Publication boundary</p>
-          <h2>Private development becomes public only through an explicit, reviewed release.</h2>
-        </div>
-        <a class="button primary" href="../front-office/">See the Front Office guide</a>
-      </section>
-
-      <section class="section" id="official-docs">
-        <div class="section-heading">
-          <p class="eyebrow">Official sources</p>
-          <h2>Use current OpenAI documentation for Codex behavior and configuration.</h2>
-        </div>
-        <div class="cards">
-          <article><h3>Codex CLI</h3><p><a href="https://learn.chatgpt.com/docs/codex/cli">Inspect, edit, run, and automate work from the terminal.</a></p></article>
-          <article><h3>AGENTS.md</h3><p><a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md">Configure durable instructions for a repository or directory.</a></p></article>
-          <article><h3>Git worktrees</h3><p><a href="https://learn.chatgpt.com/docs/environments/git-worktrees">Isolate parallel changes in separate working directories.</a></p></article>
-          <article><h3>Codex documentation</h3><p><a href="https://learn.chatgpt.com/docs/codex">Review current features, configuration, security, and development workflows.</a></p></article>
-        </div>
-      </section>
+    <div class="print-document-header" aria-hidden="true"><strong>Sutton SignWriting Back Office Guide</strong><span>https://www.sutton-signwriting.io/back-office/ · Reviewed 2026-09-05</span></div>
+    <header class="site-header"><a class="brand" href="../">Sutton SignWriting</a><nav aria-label="Guide navigation"><a href="https://office.signwriting.org/">Public Office</a><a href="../front-office/">Front Office guide</a></nav></header>
+    <main class="document-shell">
+      <header class="hero">
+        <p class="eyebrow">Public guide · Back Office</p><h1>From a clear outcome to a verified change.</h1><p class="lede">A public, machine-neutral guide to careful project work, implementation, verification, and deliberate handoff.</p><p class="principle">A change is not complete because an agent says it is. Inspect the evidence.</p>
+        <div class="document-actions"><a class="button primary" href="index.md">Markdown source</a><button class="button" type="button" data-print>Print / Save PDF</button><a class="button" href="guide.pdf">Download PDF</a></div>
+      </header>
+      <article class="markdown-body"><h2>Purpose</h2>
+<p>The Back Office turns a specifically approved outcome into a bounded, verified change. It keeps
+work close to the project that owns it, preserves unrelated work, and records evidence for review.</p>
+<p><strong>Steve is the hinge: Front prepares; Back implements; nothing is approved until he says so.</strong></p>
+<p>Use one clear outcome per conversation. A short investigation may remain with its parent task;
+unrelated goals deserve separate sessions and separate review.</p>
+<h2>Working loop</h2>
+<ol>
+<li><strong>Enter</strong> — Open the project that owns the outcome and inspect its instructions.</li>
+<li><strong>State</strong> — Describe the result, constraints, permissions, and acceptance checks.</li>
+<li><strong>Inspect</strong> — Read the relevant code, documentation, history, and working state.</li>
+<li><strong>Change</strong> — Make the smallest coherent edit that fully addresses the outcome.</li>
+<li><strong>Verify</strong> — Run checks proportionate to the risk and inspect visible behavior.</li>
+<li><strong>Review</strong> — Examine the diff, preserve unrelated work, and record a clear handoff.</li>
+</ol>
+<h2>What crosses the boundary</h2>
+<h3>Packet in</h3>
+<p>The ask, constraints, Stewardship vetoes, and acceptance conditions arrive as one specifically
+authorized packet. The packet supplies context; the implementation state must still be checked.</p>
+<h3>Verified result out</h3>
+<p>Back Office returns evidence of the result or a bounded handoff with remaining gaps. Steve
+authorizes each crossing. A packet is not standing access or standing implementation authority.</p>
+<h2>Durable context</h2>
+<ul>
+<li><strong>README</strong> explains project identity, purpose, layout, operation, and recovery.</li>
+<li><strong>AGENTS.md</strong> records durable instructions for work in its directory.</li>
+<li><strong>Decisions</strong> record consequential choices and reasoning when a project benefits.</li>
+<li><strong>Tasks</strong> track unfinished multi-session work only when a simpler issue or conversation is
+insufficient.</li>
+</ul>
+<h2>Safety and review</h2>
+<p>Before changing, confirm that the request authorizes the mutation, protect credentials and private
+records, and check for unrelated or concurrent work.</p>
+<p>Before declaring success, run the appropriate syntax, build, test, health, and behavior checks;
+review the diff and repository state; and separate verified facts from inference and uncertainty.</p>
+<h2>Multiple sessions</h2>
+<p>Several read-only conversations may inspect the same project. Concurrent writers require isolated
+branches or worktrees. Delegated work should be bounded; the main conversation remains responsible
+for integration and verification.</p>
+<h2>Continue</h2>
+<ul>
+<li><a href="../front-office/">Read the public Front Office guide</a>.</li>
+<li><a href="https://office.signwriting.org/">Visit the public Sutton SignWriting Office</a>.</li>
+<li><a href="https://developers.openai.com/codex/">Use current official Codex documentation</a>.</li>
+</ul>
+</article>
     </main>
-
-    <footer>
-      <p><strong>Sutton SignWriting Back Office Guide</strong><br>An independent project guide, not official OpenAI documentation.</p>
-      <p>Reviewed September 5, 2026 · <a href="../">Sutton SignWriting</a></p>
-    </footer>
+    <footer><p><strong>Sutton SignWriting Back Office Guide</strong><br>Public, machine-neutral method; no private operations or system details.</p><p>Reviewed 2026-09-05 · Source 16e14fe12c1e · <a href="../">Sutton SignWriting</a></p></footer>
+    <script src="app.js" defer></script>
   </body>
 </html>
