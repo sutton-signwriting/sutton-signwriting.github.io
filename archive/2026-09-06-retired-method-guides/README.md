@@ -10,3 +10,5 @@ Steve authorized take-down of the live public Front Office and Back Office metho
 
 ## Public door
 - https://office.signwriting.org/
+
+Completed 2026-09-07: active Markdown/PDF downloads, unused guide assets, and homepage promotions were removed. The original guide URLs retain only retirement notices.
