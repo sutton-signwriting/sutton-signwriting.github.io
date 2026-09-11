@@ -1,0 +1,34 @@
+name: signwriting-design
+services:
+  technology:
+    image: node:22-alpine
+    working_dir: /app
+    command: ["node", "/app/serve.mjs", "/site"]
+    environment:
+      BIND_IP: 0.0.0.0
+      PREVIEW_LINKS: ${DESIGN_PREVIEW_LINKS:-{}}
+    volumes:
+      - ./scripts/serve.mjs:/app/serve.mjs:ro
+      - ./dist/technology:/site:ro
+    ports:
+      - "${DESIGN_BIND_IP:-127.0.0.1}:7042:8080"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+  back-office:
+    image: node:22-alpine
+    working_dir: /app
+    command: ["node", "/app/serve.mjs", "/site"]
+    environment:
+      BIND_IP: 0.0.0.0
+      PREVIEW_LINKS: ${DESIGN_PREVIEW_LINKS:-{}}
+    volumes:
+      - ./scripts/serve.mjs:/app/serve.mjs:ro
+      - ./dist/back-office:/site:ro
+    ports:
+      - "${DESIGN_BIND_IP:-127.0.0.1}:7043:8080"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped

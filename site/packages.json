@@ -1,0 +1,62 @@
+[
+  {
+    "name": "@sutton-signwriting/core",
+    "version": "2.0.1",
+    "checked": "2026-09-11",
+    "registry": "https://registry.npmjs.org/@sutton-signwriting/core",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sutton-signwriting/core.git"
+    },
+    "unpackedSize": 1682016,
+    "files": []
+  },
+  {
+    "name": "@sutton-signwriting/font-db",
+    "version": "2.2.0",
+    "checked": "2026-09-11",
+    "registry": "https://registry.npmjs.org/@sutton-signwriting/font-db",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sutton-signwriting/font-db.git"
+    },
+    "unpackedSize": 44019725,
+    "files": []
+  },
+  {
+    "name": "@sutton-signwriting/font-ttf",
+    "version": "1.6.0",
+    "checked": "2026-09-11",
+    "registry": "https://registry.npmjs.org/@sutton-signwriting/font-ttf",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sutton-signwriting/font-ttf.git"
+    },
+    "unpackedSize": 19579156,
+    "files": []
+  },
+  {
+    "name": "@sutton-signwriting/sgnw-components",
+    "version": "1.2.0",
+    "checked": "2026-09-11",
+    "registry": "https://registry.npmjs.org/@sutton-signwriting/sgnw-components",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sutton-signwriting/sgnw-components.git"
+    },
+    "unpackedSize": 1588408,
+    "files": []
+  },
+  {
+    "name": "@sutton-signwriting/signmaker",
+    "version": "1.2.1",
+    "checked": "2026-09-11",
+    "registry": "https://registry.npmjs.org/@sutton-signwriting/signmaker",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sutton-signwriting/signmaker.git"
+    },
+    "unpackedSize": 530728,
+    "files": []
+  }
+]

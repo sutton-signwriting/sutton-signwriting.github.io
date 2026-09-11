@@ -1,0 +1,7 @@
+{
+  "name": "sutton-signwriting-technology",
+  "version": "0.1.0-dev.1",
+  "private": true,
+  "type": "module",
+  "scripts": {"build": "node scripts/build.mjs", "check": "node scripts/check.mjs"}
+}

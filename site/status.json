@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "checked": "2026-09-11",
+  "kind": "reviewed-snapshot",
+  "note": "Dated observations and plans. This document is not a live service monitor.",
+  "services": [
+    {"id":"office","name":"Public Office","hostname":"office.signwriting.org","state":"available","current":"Public informational website; contact by email.","target":"Steward-led navigation and publication library, pending review.","evidence":"https://office.signwriting.org/","verification":"HTTPS 200 observed on the checked date."},
+    {"id":"fonts","name":"Fonts","state":"released","current":"font-ttf 1.6.0 and font-db 2.2.0 are published on npm. Fidelity work is ongoing.","target":"Reviewed ISWA 2026 font and symbol fidelity work.","evidence":"https://github.com/sutton-signwriting/font-ttf/issues/12","verification":"npm registry release metadata; issue remains a review reference."},
+    {"id":"core","name":"Core packages","state":"released","current":"core 2.0.1 and sgnw-components 1.2.0 are published on npm.","target":"Compatibility checks for the next platform generation.","evidence":"https://registry.npmjs.org/@sutton-signwriting/core","verification":"npm dist-tags.latest queried on the checked date."},
+    {"id":"app","name":"Registered SignWriting app","hostname":"app.signwriting.org","state":"not-ready","current":"In design/development. HTTPS certificate hostname verification failed.","target":"Invited app access after verified sign-in, permissions, and usage limits.","verification":"HTTPS request rejected during certificate verification; product readiness not established."},
+    {"id":"api","name":"Community API","hostname":"api.signwriting.org","state":"not-ready","current":"Not production-ready. HTTPS certificate hostname verification failed.","target":"Authenticated API with enforced authorization and metering.","verification":"HTTPS request rejected during certificate verification; API behavior not verified."},
+    {"id":"office-login","name":"Office login","state":"planned","current":"Public sign-in unavailable. The static Office creates no account.","target":"A verified Office login before shared identity with the app.","evidence":"https://github.com/sutton-signwriting/office","verification":"Local account-unavailable build and account boundary checks."},
+    {"id":"back-office","name":"Back Office door","hostname":"office.sutton-signwriting.io","state":"planned","current":"Planned hostname; DNS did not resolve on the checked date.","target":"A separate coordination door; any future operator access requires its own security design.","verification":"DNS resolution failed on the checked date."}
+  ]
+}
