@@ -40,6 +40,42 @@ try{
   assert.ok(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'),route+' overflow');
   if(route==='fonts/'){await evaluate('document.querySelector("[data-copy]").click()');await delay(150);assert.ok(await evaluate('document.querySelector("[role=status]").textContent.length>0'));}
  }
+ await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
+ for(const [size,width,height] of [['desktop',1440,1050],['mobile',390,844]]){
+  await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});
+  await call('Page.navigate',{url:new URL('developers/',technology).href});await delay(450);
+  assert.ok(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'),'Developer '+size+' overflow');
+  assert.equal(await evaluate('document.querySelectorAll(".tool-row").length'),13);
+  assert.deepEqual(await evaluate('[...document.querySelectorAll(".environment-jumps a")].map(a=>a.hash)'),['#javascript','#php','#python','#external']);
+  assert.ok(await evaluate('document.body.innerText.toLowerCase().includes("standalone community proposal")'));
+  const screenshot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
+  await writeFile(path.join(output,'developers-'+size+'.png'),Buffer.from(screenshot.data,'base64'));
+  for(const group of ['javascript','php','python','external']){
+   await evaluate(`document.querySelector('.environment-jumps a[href="#${group}"]').click()`);await delay(80);
+   assert.equal(await evaluate('location.hash'),'#'+group);
+   assert.ok(await evaluate(`document.getElementById('${group}').getBoundingClientRect().top>=0`));
+  }
+  for(const [tool,expected] of [['core','npm install @sutton-signwriting/core@2.0.1'],['core-php','composer require sutton-signwriting/core:1.0.1'],['core-py','python -m pip install sutton-signwriting-core==1.1.3']]){
+   const position=await evaluate(`(()=>{const row=document.getElementById('${tool}');row.querySelector('details').open=true;const button=row.querySelector('[data-copy]');button.scrollIntoView({behavior:'instant',block:'center'});const r=button.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2,command:document.getElementById(button.dataset.copy).textContent}})()`);
+   assert.equal(position.command,expected);
+   await call('Input.dispatchMouseEvent',{type:'mousePressed',x:position.x,y:position.y,button:'left',clickCount:1});
+   await call('Input.dispatchMouseEvent',{type:'mouseReleased',x:position.x,y:position.y,button:'left',clickCount:1});
+   await delay(80);
+   assert.equal(await evaluate(`document.querySelector('#${tool} [role=status]').textContent`),'Copied.');
+  }
+  await evaluate('document.querySelector("#javascript").scrollIntoView({behavior:"instant"})');
+  const list=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
+  await writeFile(path.join(output,'developers-'+size+'-tools.png'),Buffer.from(list.data,'base64'));
+  console.log(`Developer ${size}: environment navigation, readable layout, and JS/PHP/Python copy PASS`);
+ }
+ for(const [route,hash] of [['packages/',''],['tools/','#javascript'],['machine-learning/','#external']]){
+  await call('Page.navigate',{url:new URL(route,technology).href});await delay(650);
+  assert.equal(await evaluate('location.pathname'),'/developers/');
+  assert.equal(await evaluate('location.hash'),hash);
+ }
+ const catalog=await fetch(new URL('tools.json',technology)).then(r=>r.json());
+ assert.equal(catalog.tools.length,13);assert.ok(catalog.tools.some(t=>t.owner!=='sutton-signwriting'));
+ console.log('Legacy developer URLs and downloadable tool catalog: PASS');
  assert.deepEqual(errors,[],'Uncaught browser exceptions');
  await writeFile(path.join(output,'browser-review.json'),JSON.stringify({report,errors,checked:new Date().toISOString()},null,2));
  console.log('Secondary routes, copy-code feedback, and browser exceptions: PASS');

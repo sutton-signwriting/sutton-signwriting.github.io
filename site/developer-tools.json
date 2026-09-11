@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "checked": "2026-09-11",
+  "title": "SignWriting developer tools",
+  "sourcePolicy": "Curated from maintainer documentation and package registries. Versions are reviewed snapshots; source and research projects have their own release and maintenance status.",
+  "groups": [
+    {
+      "id": "javascript",
+      "title": "JavaScript",
+      "subtitle": "Browser and Node.js",
+      "description": "Start with core for text processing. Choose font-ttf for browser rendering or font-db for Node.js, then add components or an editor."
+    },
+    {
+      "id": "php",
+      "title": "PHP",
+      "subtitle": "Server-side text processing",
+      "description": "Use the Composer library for the FSW/SWU text model in PHP applications."
+    },
+    {
+      "id": "python",
+      "title": "Python",
+      "subtitle": "Text, rendering, and data workflows",
+      "description": "Use the Sutton packages for core text operations and font rendering. For external NLP and research libraries, continue to the next section."
+    },
+    {
+      "id": "external",
+      "title": "External libraries & processing tools",
+      "subtitle": "Community software and research",
+      "description": "Find structured-data, tokenization, evaluation, font-building, and annotation tools maintained outside sutton-signwriting. Each card identifies its owner and environment."
+    }
+  ],
+  "tools": [
+    {
+      "id": "core",
+      "name": "Core",
+      "group": "javascript",
+      "environments": [
+        "JavaScript",
+        "Node.js",
+        "Browser"
+      ],
+      "owner": "sutton-signwriting",
+      "summary": "Parse and validate FSW/SWU text, convert representations, and work with queries and style strings.",
+      "capabilities": [
+        "Parsing",
+        "Conversion",
+        "Queries"
+      ],
+      "repository": "https://github.com/sutton-signwriting/core",
+      "checked": "2026-09-11",
+      "npmPackage": "@sutton-signwriting/core",
+      "documentation": "https://www.sutton-signwriting.io/core/",
+      "status": "Released"
+    },
+    {
+      "id": "font-ttf",
+      "name": "Font TTF",
+      "group": "javascript",
+      "environments": [
+        "JavaScript",
+        "Browser"
+      ],
+      "owner": "sutton-signwriting",
+      "summary": "Render symbols, signs, and structured text as SVG or PNG using the TrueType fonts.",
+      "capabilities": [
+        "Rendering",
+        "TrueType",
+        "SVG / PNG"
+      ],
+      "repository": "https://github.com/sutton-signwriting/font-ttf",
+      "checked": "2026-09-11",
+      "npmPackage": "@sutton-signwriting/font-ttf",
+      "documentation": "https://www.sutton-signwriting.io/font-ttf/",
+      "status": "Released"
+    },
+    {
+      "id": "font-db",
+      "name": "Font database",
+      "group": "javascript",
+      "environments": [
+        "JavaScript",
+        "Node.js"
+      ],
+      "owner": "sutton-signwriting",
+      "summary": "Render symbols, signs, and structured text from the SQLite symbol database, including command-line workflows.",
+      "capabilities": [
+        "Rendering",
+        "SQLite",
+        "CLI"
+      ],
+      "repository": "https://github.com/sutton-signwriting/font-db",
+      "checked": "2026-09-11",
+      "npmPackage": "@sutton-signwriting/font-db",
+      "documentation": "https://www.sutton-signwriting.io/font-db/",
+      "status": "Released"
+    },
+    {
+      "id": "sgnw-components",
+      "name": "Web components",
+      "group": "javascript",
+      "environments": [
+        "JavaScript",
+        "TypeScript",
+        "Browser"
+      ],
+      "owner": "sutton-signwriting",
+      "summary": "Use reusable SignWriting components in browser interfaces.",
+      "capabilities": [
+        "Web components",
+        "UI"
+      ],
+      "repository": "https://github.com/sutton-signwriting/sgnw-components",
+      "checked": "2026-09-11",
+      "npmPackage": "@sutton-signwriting/sgnw-components",
+      "documentation": "https://www.sutton-signwriting.io/sgnw-components/",
+      "status": "Released"
+    },
+    {
+      "id": "signmaker",
+      "name": "SignMaker",
+      "group": "javascript",
+      "environments": [
+        "JavaScript",
+        "TypeScript",
+        "Browser"
+      ],
+      "owner": "sutton-signwriting",
+      "summary": "Write and edit FSW/SWU signs in the existing editor, or embed it in your own application.",
+      "capabilities": [
+        "Editor",
+        "Embedding"
+      ],
+      "repository": "https://github.com/sutton-signwriting/signmaker",
+      "checked": "2026-09-11",
+      "npmPackage": "@sutton-signwriting/signmaker",
+      "documentation": "https://www.sutton-signwriting.io/signmaker/",
+      "status": "Released",
+      "demo": "https://www.sutton-signwriting.io/signmaker/",
+      "extraLinks": [
+        {
+          "label": "Embedding example",
+          "url": "https://www.sutton-signwriting.io/signmaker/demo.html"
+        }
+      ]
+    },
+    {
+      "id": "core-php",
+      "name": "Core for PHP",
+      "group": "php",
+      "environments": [
+        "PHP",
+        "Composer"
+      ],
+      "owner": "sutton-signwriting",
+      "summary": "Parse and convert FSW/SWU, build queries, and handle style strings in PHP.",
+      "capabilities": [
+        "Parsing",
+        "Conversion",
+        "Queries"
+      ],
+      "repository": "https://github.com/sutton-signwriting/core-php",
+      "checked": "2026-09-11",
+      "package": "sutton-signwriting/core",
+      "version": "1.0.1",
+      "documentation": "https://www.sutton-signwriting.io/core-php/",
+      "distribution": "https://packagist.org/packages/sutton-signwriting/core",
+      "registry": "https://repo.packagist.org/p2/sutton-signwriting/core.json",
+      "install": "composer require sutton-signwriting/core:1.0.1",
+      "requirements": "Requires mbstring. The package declares PHP ^7.3 or ^8.0 compatibility.",
+      "status": "Released"
+    },
+    {
+      "id": "core-py",
+      "name": "Core for Python",
+      "group": "python",
+      "environments": [
+        "Python"
+      ],
+      "owner": "sutton-signwriting",
+      "summary": "Process FSW/SWU text, queries, conversions, and style strings in Python.",
+      "capabilities": [
+        "Parsing",
+        "Conversion",
+        "Queries"
+      ],
+      "repository": "https://github.com/sutton-signwriting/core-py",
+      "checked": "2026-09-11",
+      "package": "sutton-signwriting-core",
+      "version": "1.1.3",
+      "documentation": "https://www.sutton-signwriting.io/core-py/",
+      "distribution": "https://pypi.org/project/sutton-signwriting-core/1.1.3/",
+      "registry": "https://pypi.org/pypi/sutton-signwriting-core/json",
+      "install": "python -m pip install sutton-signwriting-core==1.1.3",
+      "requirements": "Requires Python >=3.11, <4.0.",
+      "status": "Released"
+    },
+    {
+      "id": "font-py",
+      "name": "Font rendering for Python",
+      "group": "python",
+      "environments": [
+        "Python"
+      ],
+      "owner": "sutton-signwriting",
+      "summary": "Compose SVG and PNG output for symbols, signs, and text using the SQLite symbol database.",
+      "capabilities": [
+        "Rendering",
+        "SQLite",
+        "SVG / PNG"
+      ],
+      "repository": "https://github.com/sutton-signwriting/font-py",
+      "checked": "2026-09-11",
+      "package": "sutton-signwriting-font",
+      "version": "1.0.1",
+      "documentation": "https://www.sutton-signwriting.io/font-py/",
+      "distribution": "https://pypi.org/project/sutton-signwriting-font/1.0.1/",
+      "registry": "https://pypi.org/pypi/sutton-signwriting-font/json",
+      "install": "python -m pip install sutton-signwriting-font==1.0.1",
+      "requirements": "Requires Python >=3.11, <4.0.",
+      "status": "Released"
+    },
+    {
+      "id": "slp-signwriting",
+      "name": "SignWriting utilities",
+      "group": "external",
+      "environments": [
+        "Python"
+      ],
+      "owner": "sign-language-processing",
+      "summary": "Parse FSW into structured objects, tokenize text for NLP, convert formats, and generate images.",
+      "capabilities": [
+        "Structured data",
+        "Tokenization",
+        "Rendering"
+      ],
+      "repository": "https://github.com/sign-language-processing/signwriting",
+      "checked": "2026-09-11",
+      "status": "Source project",
+      "documentation": "https://github.com/sign-language-processing/signwriting#readme",
+      "note": "The repository documents the current installation. Its visualizer has different styling support from font-db."
+    },
+    {
+      "id": "signwriting-evaluation",
+      "name": "SignWriting evaluation",
+      "group": "external",
+      "environments": [
+        "Python"
+      ],
+      "owner": "sign-language-processing",
+      "summary": "Compare machine-generated SignWriting with token, character, image, and symbol-distance metrics.",
+      "capabilities": [
+        "Machine learning",
+        "Evaluation"
+      ],
+      "repository": "https://github.com/sign-language-processing/signwriting-evaluation",
+      "checked": "2026-09-11",
+      "status": "Research tools",
+      "documentation": "https://github.com/sign-language-processing/signwriting-evaluation#readme",
+      "note": "Metric scores answer specific comparison questions; they do not by themselves establish writing quality."
+    },
+    {
+      "id": "complex-tokenization",
+      "name": "Complex tokenization",
+      "group": "external",
+      "environments": [
+        "Python",
+        "Rust"
+      ],
+      "owner": "sign-language-processing",
+      "summary": "Explore tokenization methods for complex scripts and language-specific structural decompositions.",
+      "capabilities": [
+        "Tokenization",
+        "Machine learning"
+      ],
+      "repository": "https://github.com/sign-language-processing/complex-tokenization",
+      "checked": "2026-09-11",
+      "status": "Research tools",
+      "documentation": "https://github.com/sign-language-processing/complex-tokenization#readme"
+    },
+    {
+      "id": "signwriting-fonts",
+      "name": "SignWriting font tools",
+      "group": "external",
+      "environments": [
+        "Python",
+        "FontForge",
+        "HarfBuzz"
+      ],
+      "owner": "sign-language-processing",
+      "summary": "Inspect and rebuild external OneD and TwoD font work from the documented source pipeline.",
+      "capabilities": [
+        "Font building",
+        "Rendering"
+      ],
+      "repository": "https://github.com/sign-language-processing/signwriting-fonts",
+      "checked": "2026-09-11",
+      "status": "Source project",
+      "documentation": "https://github.com/sign-language-processing/signwriting-fonts#readme",
+      "note": "These builds have their own implementation and review history, separate from the published Sutton font packages."
+    },
+    {
+      "id": "signwriting-annotator",
+      "name": "SignWriting Annotator",
+      "group": "external",
+      "environments": [
+        "TypeScript",
+        "Browser"
+      ],
+      "owner": "sign-language-processing",
+      "summary": "Explore a browser annotation project for relating signed-language videos to written signs.",
+      "capabilities": [
+        "Annotation",
+        "Research data"
+      ],
+      "repository": "https://github.com/sign-language-processing/signwriting-annotator",
+      "checked": "2026-09-11",
+      "status": "Research tool",
+      "documentation": "https://github.com/sign-language-processing/signwriting-annotator#readme"
+    }
+  ],
+  "communityExtension": {
+    "id": "ssw-ext",
+    "name": "ssw-ext",
+    "owner": "Michael Cooper",
+    "environments": [
+      "JavaScript",
+      "Browser",
+      "Node.js build"
+    ],
+    "status": "Standalone community proposal",
+    "checked": "2026-09-11",
+    "repository": "https://github.com/michael-n-cooper/ssw-ext",
+    "demo": "https://michael-n-cooper.github.io/ssw-ext/",
+    "documentation": "https://michael-n-cooper.github.io/ssw-ext/docs/",
+    "introduction": "https://michael-n-cooper.github.io/ssw-ext/introduction.html",
+    "discussion": "https://github.com/sutton-signwriting/font-ttf/issues/13",
+    "maintainerResponse": "https://github.com/sutton-signwriting/font-ttf/issues/13#issuecomment-5540730336",
+    "summary": "Community experiments with symbol properties, mirroring and sign transformations, descriptions, and temporal sequencing.",
+    "currentImplementation": "Prototypes extend the FSW functions in font-ttf and depend on core. Proposed functions have different levels of maturity.",
+    "integrationStatus": "The GitHub maintainer response recommends continued standalone development. Inclusion in core, font-ttf, or font-db has not been accepted.",
+    "reviewBoundary": "A hand symbol alone does not deterministically identify the left or right hand. Handedness assumptions, description wording, and temporal ordering need domain review.",
+    "possiblePackageReview": [
+      {
+        "package": "core",
+        "scope": "Representation-level utilities, only where their meaning can be specified and verified without font rendering."
+      },
+      {
+        "package": "font-ttf",
+        "scope": "Browser rendering or display helpers, evaluated against the published font-based behavior."
+      },
+      {
+        "package": "font-db",
+        "scope": "Applicable server-rendering counterparts after shared behavior is established and parity is tested."
+      }
+    ]
+  }
+}

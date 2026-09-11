@@ -28,3 +28,19 @@ Local runtime mapping is documented in the owning platform's design review recor
 Before production: Steve reviews content, translations, contacts, exact Git commits,
 deployment behavior, preservation of existing package-documentation paths, and the
 rollback plan. The baseline tag is `baseline-2026-09-11`.
+
+## Developer tools catalog
+
+`/developers/` groups tools under JavaScript, PHP, Python, and external processing
+and research. `site/developer-tools.json` owns the catalog and community extension
+proposal. Its npm entries resolve versions from `site/packages.json`; Python and PHP
+entries retain explicitly checked registry versions. `site/developers.mjs` renders
+the page, and the build emits the same resolved records at `/tools.json`.
+
+`/packages/`, `/tools/`, and `/machine-learning/` are static redirects to this page
+or its environment sections. They are absent from primary navigation and sitemap.
+Cloud-maker, hello-world, and portable are removed from the development catalog.
+
+The ssw-ext feature links to the author's demo and font-ttf issue 13, including the
+maintainer response favoring standalone development. Possible core/font-ttf/font-db
+review scopes are proposals and do not claim accepted or released integration.
