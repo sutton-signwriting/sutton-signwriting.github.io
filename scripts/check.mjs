@@ -49,3 +49,7 @@ assert.ok(!/cloud-maker|hello-world|portable/.test(developerHtml));
 const nav=developerHtml.match(/<nav aria-label="Primary">([\s\S]*?)<\/nav>/)[1];
 assert.ok(!/href="\/(packages|tools|machine-learning)\//.test(nav));
 console.log('Developer environments, catalog, proposal status, and consolidated routes passed.');
+
+const backHome=await readFile('dist/back-office/index.html','utf8');
+assert.ok(backHome.includes('href="https://iswa.signwriting.org/"'));
+assert.ok(backHome.includes('Publication setup pending'));

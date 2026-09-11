@@ -44,3 +44,6 @@ Cloud-maker, hello-world, and portable are removed from the development catalog.
 The ssw-ext feature links to the author's demo and font-ttf issue 13, including the
 maintainer response favoring standalone development. Possible core/font-ttf/font-db
 review scopes are proposals and do not claim accepted or released integration.
+
+The Back Office overview links to `iswa.signwriting.org` and marks publication
+setup pending until GitHub Pages deployment and public DNS/TLS are verified.
