@@ -80,7 +80,7 @@ export function developerPage(catalog, {esc, link, code, heading}) {
     <section class="section shell developer-foundations">
       <h2>Keep the text model in view.</h2>
       <p>Start with the representation your application needs, then choose its rendering and editing tools.</p>
-      <div class="link-list"><a href="/characters/">FSW & SWU →</a><a href="/spec/">Specification →</a><a href="/fonts/">Font setup & fidelity →</a><a href="/status/">App & API status →</a></div>
+      <div class="link-list"><a href="/characters/">FSW & SWU →</a><a href="https://office.signwriting.org/#publications">Publication library ↗</a><a href="/fonts/">Font setup & fidelity →</a><a href="/status/">App & API status →</a></div>
       <p class="small">The community app and API are still in development. The catalog links to packages and source projects; it does not establish availability of the future hosted service.</p>
     </section>`;
 }

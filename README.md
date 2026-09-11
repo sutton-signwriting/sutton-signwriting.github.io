@@ -45,5 +45,10 @@ The ssw-ext feature links to the author's demo and font-ttf issue 13, including 
 maintainer response favoring standalone development. Possible core/font-ttf/font-db
 review scopes are proposals and do not claim accepted or released integration.
 
-The Back Office overview links to `iswa.signwriting.org` and marks publication
-setup pending until GitHub Pages deployment and public DNS/TLS are verified.
+The Back Office overview links to `iswa.signwriting.org`. GitHub Pages deployment
+and valid HTTPS have been verified at GitHub. Some DNS caches still reach the old
+host; the development overview records that propagation window.
+
+The `/spec/` compatibility doorway now introduces the Formal SignWriting Zenodo
+archive, immutable GitHub source, living edition, and Front Office publication
+library. Practical FSW/SWU guidance remains under `/characters/`.

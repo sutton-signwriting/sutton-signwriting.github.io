@@ -52,4 +52,4 @@ console.log('Developer environments, catalog, proposal status, and consolidated 
 
 const backHome=await readFile('dist/back-office/index.html','utf8');
 assert.ok(backHome.includes('href="https://iswa.signwriting.org/"'));
-assert.ok(backHome.includes('Publication setup pending'));
+assert.ok(backHome.includes('Published · DNS updating'));
